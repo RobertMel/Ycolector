@@ -30,7 +30,7 @@
             $query = $db->prepare($sql);
             $query->execute();
             
-            header('Location:hpage.php');
+            header('Location:../front/hpage.php');
         }
     }
     if (isset($_GET['logEmail']) && isset($_GET['logPassword'])) {
@@ -52,7 +52,7 @@
             $_SESSION['name'] = htmlspecialchars($data['username']); 
             $_SESSION['email'] = htmlspecialchars($data['email']);
 
-            header('Location:hpage.php');
+            header('Location:../front/hpage.php');
         }
     }
 
