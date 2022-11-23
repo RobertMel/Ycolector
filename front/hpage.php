@@ -1,5 +1,5 @@
 <?php
-    session_start();
+    include '../back/hpageB.php';
 ?>
 
 <!DOCTYPE html>
@@ -29,7 +29,27 @@
   <a id="ok" class="prix">prix</a>
 </div>
 
-  
+<div id="form-item" class="hidden">
+  <form method=”POST” id="form">
+    <div id="name-item">
+      <input type="text" name="name" id="name" required placeholder="name">
+    </div>
+    <div id="price-item">
+      <input type="text" name="price" id="price" required placeholder="price">
+    </div>
+    <div id="description-item">
+      <input type="text" name="description" id="description" required placeholder="description">
+    </div>
+    <div id="pircture-item">
+      <input type="text" name="pircture" id="pircture" >
+    </div>
+    <input type="submit" class="" value="Ajouter">
+  </form>
+</div>
+
+<?php
+  for ($i=0; $i < $_SESSION['nbcard']; $i++) { 
+    ?>
 <div class='card-wrapper'>
     <div class='card' data-toggle-class='flipped'>
       <div class='card-front'>
@@ -54,6 +74,9 @@
   </div>
 
 </div>
+<?php
+  }
+  ?>
 
 
 

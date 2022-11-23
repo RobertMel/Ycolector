@@ -28,25 +28,36 @@
 
 // Add a card to the section
 
-function add() {
+// function add() {
 
 
-    const cards = document.querySelector(".card-wrapper")
-    const num = Math.trunc(Math.random() * 9);
-    const newCard = document.createElement("div");
-    newCard.innerText = num;
-    newCard.addEventListener('click', hide);
-    cards.appendChild(newCard);
+//     const cards = document.querySelector(".card-wrapper")
+//     const num = Math.trunc(Math.random() * 9);
+//     const newCard = document.createElement("div");
+//     newCard.innerText = num;
+//     newCard.addEventListener('click', hide);
+//     cards.appendChild(newCard);
 
-}
+// }
 
 // This lazy function does nothing
-function hide() {
-    // Empty function
-}
+// function hide() {
+//     // Empty function
+// }
 // Call function add once to display first card
-add()
+// add()
 
 // When button is clicked, function add is called
-button = document.querySelector('#add')
-button.addEventListener('click', add)
+// button = document.querySelector('#add')
+// button.addEventListener('click', add)
+
+
+
+
+formItem = document.getElementById('form-item');
+button = document.getElementById('add');
+
+
+button.addEventListener("click", () => {
+    formItem.classList.toggle('hidden')
+})
