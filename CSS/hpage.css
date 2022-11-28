@@ -1,3 +1,6 @@
+@import url(reset.css);
+
+
 *{
     background-color:rgb(88, 41, 0);
 }
@@ -32,6 +35,83 @@ hr {
   
 }
 
+
+.card {
+  border: none;
+  display: flex;
+  font-size: 16px;
+  text-align: left;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+  flex-wrap: wrap;
+}
+
+/* flip cards */
+
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+  perspective: 1000px;
+  margin: 10px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+  border: none;
+  border-radius: 8px;
+}
+
+.flip-card-back-name {
+  color: #fff;
+  text-align: center;
+  font-size: 40px;
+  padding-bottom: 5%;
+}
+.flip-card-back-member {
+  color: #fff;
+  font-size: 15px;
+}
+
+.flip-card-back {
+  background-color: #2980b9;
+  color: white;
+  transform: rotateY(180deg);
+  border-radius: 8px;
+}
+
+.img {
+  width:300px;
+  height:300px;
+  border-radius: 8px;
+}
+
+
+
 /*------------------*
  * Global variables *
  *------------------*/
@@ -58,156 +138,7 @@ hr {
  a:hover {
    text-decoration: underline;
  }
- 
- .card {
-   color: #d4cd96;
-   font-family: "Fira Sans", sans-serif;
-   height: 50%;
-   left: 0;
-   position: absolute;
-   top: 0;
-   transform-origin: 100% 50%;
-   transform-style: preserve-3d;
-   width: 50%;
-   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-   transition: transform 0.6s cubic-bezier(0.49, 0.23, 0.58, 0.49);
- }
- .card.flipped {
-   transform: translateX(-100%) rotateY(-180deg);
- }
- 
- .card-front,
- .card-back {
-   -webkit-backface-visibility: hidden;
-           backface-visibility: hidden;
-   background: repeating-linear-gradient(135deg, rgba(0, 0, 0, 0.3), transparent 1px, rgba(0, 0, 0, 0.3) 2px);
-   background-size: 3px 3px;
-   background-color: #302f34;
-   border-radius: 1px;
-   box-shadow: 0px -6px 8px 0px rgba(0, 0, 0, 0.1), 0px 6px 8px 0px rgba(0, 0, 0, 0.1), 6px 0px 8px 0px rgba(0, 0, 0, 0.1), -6px 0px 8px 0px rgba(0, 0, 0, 0.1);
-   cursor: pointer;
-   height: 100%;
-   left: 0;
-   padding: 5%;
-   position: absolute;
-   top: 0;
-   width: 100%;
- }
- 
- .card-back {
-   transform: rotateY(180deg);
- }
- .card-back .layer {
-   background: repeating-linear-gradient(135deg, rgba(76, 71, 31, 0.3), transparent 1px, rgba(76, 71, 31, 0.3) 2px);
-   background-size: 3px 3px;
-   background-color: #d4cd96;
-   color: #302f34;
-   height: 100%;
-   position: relative;
-   width: 100%;
- }
- .card-back .layer:after {
-   background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), transparent);
-   content: "";
-   display: block;
-   height: 100%;
-   left: 0;
-   position: absolute;
-   top: 0;
-   width: 100%;
- }
- .card-back .layer .top,
- .card-back .layer .bottom {
-   left: 8%;
-   position: absolute;
-   z-index: 1;
- }
- .card-back .layer .top {
-   top: 12%;
- }
- .card-back .layer .bottom {
-   bottom: 12%;
- }
- .card-back .layer h2,
- .card-back .layer h3,
- .card-back .layer h4 {
-   font-weight: 400;
-   margin: 2px 0;
- }
- .card-back .layer h2 {
-   font-size: 18px;
-   font-weight: 500;
-   text-transform: uppercase;
- }
- .card-back .layer h3 {
-   font-size: 16px;
- }
- .card-back .layer h4 {
-   font-size: 16px;
-   font-style: italic;
- }
- 
- .card-front .layer {
-   -webkit-backface-visibility: hidden;
-           backface-visibility: hidden;
-   display: flex;
-   flex-direction: column;
-   height: 100%;
-   justify-content: center;
-   position: relative;
-   width: 100%;
- }
- .card-front .layer h1 {
-   font-size: 32px;
-   font-weight: 400;
-   letter-spacing: -2px;
-   margin: 0 auto;
-   padding: 6px 18px 4px;
-   text-align: center;
- }
- .card-front .layer .corner {
-   -webkit-backface-visibility: hidden;
-           backface-visibility: hidden;
-   border-right: 2px solid #d4cd96;
-   border-top: 2px solid #d4cd96;
-   height: 12px;
-   position: absolute;
-   width: 12px;
- }
- .card-front .layer .corner:nth-of-type(1) {
-   right: 0;
-   top: 0;
- }
- .card-front .layer .corner:nth-of-type(2) {
-   left: 0;
-   top: 0;
-   transform: rotateZ(-90deg);
- }
- .card-front .layer .corner:nth-of-type(3) {
-   bottom: 0;
-   left: 0;
-   transform: rotateZ(180deg);
- }
- .card-front .layer .corner:nth-of-type(4) {
-   bottom: 0;
-   right: 0;
-   transform: rotateZ(90deg);
- }
- 
- .card-wrapper {
-   height: 271.7647058824px;
-   max-width: 420px;
-   perspective: 600px;
-   position: relative;
-   width: 100%;
-   transition: transform 1s;
- }
-
 
  .hidden{
   display: none;
  }
-
- /* #form-item {
-  display: flex;
- } */
