@@ -32,7 +32,7 @@ include '../back/hpageB.php';
   </div>
 
   <div id="form-item" class="hidden">
-    <form method=”POST” id="form">
+    <form method="post" id="form" enctype="multipart/form-data">
       <div id="name-item">
         <input type="text" name="name" id="name" required placeholder="name">
       </div>
@@ -43,11 +43,12 @@ include '../back/hpageB.php';
         <input type="text" name="description" id="description" required placeholder="description">
       </div>
       <div id="pircture-item">
-        <input type="file" name="picture" id="picture">
+        <input type="file" name="photo" id="photo">
       </div>
       <input type="submit" class="" value="Ajouter">
     </form>
   </div>
+
 
   <div class="card">
     <?php
@@ -61,8 +62,8 @@ include '../back/hpageB.php';
           </div>
           <div class="flip-card-back">
             <h1>
-              <?php 
-                echo $data[$i]['name'];
+              <?php
+              echo $data[$i]['name'];
               ?>
             </h1>
             <p>Architect & Engineer</p>
@@ -75,9 +76,6 @@ include '../back/hpageB.php';
     }
     ?>
   </div>
-
-
-
   <script src="../JS/hpage.js"></script>
 
 </body>

@@ -1,0 +1,1 @@
+RedirectPermanent http://localhost:55/login.php http://localhost:55/front/login.php
